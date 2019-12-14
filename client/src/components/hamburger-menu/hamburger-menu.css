@@ -1,0 +1,137 @@
+#menuToggle {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #141414;
+  padding-left: 0px;
+  padding-top: 10px;
+  z-index: 1000;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-bottom: 20px;
+}
+  
+@media only screen and (min-width: 320px) {
+  #menuToggle {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 480px) {
+  #menuToggle {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #menuToggle {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #menuToggle {
+    display: none;
+  }
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1001;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  z-index: 1000;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #fff;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 300px;
+  height: 110vh;
+  overflow-y: hidden;
+  margin: -100px 0 0 0px;
+  z-index: 999;
+  background: #111111;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu .search input {
+  display: flex;
+  flex-direction: row-reverse;
+  min-width: 100%;
+  align-self: center;
+  padding: 4px 0px;
+}
+#menu .search input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#menu .nav-links {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+#menu .nav-links > * {
+  margin: 10px 0px;
+}
+#menu .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}

@@ -1,0 +1,23 @@
+.grid-slide {
+  width: 95%;
+  height: auto;
+  font-size: 16px;
+  margin: 0 auto 30px auto;
+}
+
+.grid-slide > p {
+  min-width: 80%;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.grid-slide .cards {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
